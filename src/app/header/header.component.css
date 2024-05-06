@@ -1,0 +1,11 @@
+/* Estilos para o componente de header */
+.header-container {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  margin: 0;
+}

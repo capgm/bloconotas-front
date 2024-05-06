@@ -12,6 +12,8 @@ import { NotaListComponent } from './nota-list/nota-list.component';
 import { NotaFormComponent } from './nota-form/nota-form.component';
 import { NotaEditComponent } from './nota-edit/nota-edit.component';
 import { NotaCreateComponent } from './nota-create/nota-create.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NotaCreateComponent } from './nota-create/nota-create.component';
     NotaListComponent,
     NotaFormComponent,
     NotaEditComponent,
-    NotaCreateComponent
+    NotaCreateComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
