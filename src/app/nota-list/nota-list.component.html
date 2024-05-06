@@ -1,7 +1,7 @@
-<h2>Lista de Notas</h2>
+<h2 class="lista-notas">Lista de Notas</h2>
 
-<ul>
-  <li *ngFor="let nota of notas">
+<ul class="lista-notas">
+  <li *ngFor="let nota of notas" class="nota-item">
     {{ nota.titulo }} - {{ nota.anotacao }}
     <button (click)="edit(nota.id)">Editar</button>
     <button (click)="delete(nota.id)">Deletar</button>

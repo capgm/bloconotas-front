@@ -1,0 +1,34 @@
+/* Estilos para a tela de listagem de notas */
+.lista-notas {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lista-notas ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista-notas li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.lista-notas li h3 {
+  margin-top: 0;
+}
+
+.lista-notas li p {
+  margin-bottom: 0;
+}
+
+.lista-notas li button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

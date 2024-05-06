@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 interface AuthResponse {
   token: string;
+  username: string;
 }
 
 @Component({
@@ -26,8 +27,12 @@ export class RegisterComponent {
 
     this.http.post<AuthResponse>(url, body).subscribe(
       (response) => {
+
+        localStorage.clear();
+
         console.log('Login successful:', response);
         localStorage.setItem('token', response.token);
+        localStorage.setItem('username', response.username);
         console.log('Login successful!');
       },
       (error) => {

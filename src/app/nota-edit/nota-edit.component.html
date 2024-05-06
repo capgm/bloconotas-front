@@ -1,6 +1,6 @@
-<h2>Editar Nota</h2>
+<h2 class="nota-edicao">Editar Nota</h2>
 
-<form *ngIf="nota">
+<form *ngIf="nota" class="nota-edicao">
   <div>
     <label for="titulo">Título:</label>
     <input type="text" id="titulo" [(ngModel)]="nota.titulo" name="titulo">

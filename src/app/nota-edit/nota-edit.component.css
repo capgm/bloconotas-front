@@ -1,0 +1,32 @@
+/* Estilos para a tela de edição de notas */
+.nota-edicao {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nota-edicao form {
+  display: flex;
+  flex-direction: column;
+}
+
+.nota-edicao form label {
+  margin-bottom: 10px;
+}
+
+.nota-edicao form input[type="text"],
+.nota-edicao form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.nota-edicao form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
