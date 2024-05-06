@@ -1,0 +1,12 @@
+<form (ngSubmit)="adicionarNota()">
+  <div>
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" [(ngModel)]="novaNota.titulo" required>
+  </div>
+  <div>
+    <label for="anotacao">Anotação:</label>
+    <textarea id="anotacao" name="anotacao" [(ngModel)]="novaNota.anotacao" required></textarea>
+  </div>
+  <input type="hidden" id="campoHidden" name="campoHidden" [(ngModel)]="username">
+  <button type="submit">Adicionar Nota</button>
+</form>

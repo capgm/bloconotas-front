@@ -1,0 +1,17 @@
+
+<h1>My Login App</h1>
+<router-outlet>
+<nav>
+  <a *ngIf="!isAuthenticated()" routerLink="/login" routerLinkActive="active">Login</a>
+  <BR>
+  <a *ngIf="isAuthenticated()" routerLink="/register" routerLinkActive="active">Register</a>
+  <BR>
+  <a *ngIf="isAuthenticated()" routerLink="/nota-lista" routerLinkActive="active">Lista de notas</a>
+  <BR>
+  <a *ngIf="isAuthenticated()" routerLink="/nota-edite" routerLinkActive="active">Alterar notas</a>
+  <BR>
+    <a *ngIf="isAuthenticated()" routerLink="/nota-create" routerLinkActive="active">Inclui notas</a>
+  <BR>
+  <a *ngIf="isAuthenticated()" href="#" (click)="logout()">Sair</a>
+</nav>
+</router-outlet>
