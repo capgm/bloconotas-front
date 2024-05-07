@@ -19,6 +19,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { provideHttpClient } from '@angular/common/http';
 import { NotaViewComponent } from './componentes/nota/nota-view/nota-view.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HomeComponent } from './componentes/home/home.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     NotaCreateComponent,
     HeaderComponent,
     FooterComponent,
-    NotaViewComponent
+    NotaViewComponent,
+    HomeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, MatSnackBarModule],
   providers: [

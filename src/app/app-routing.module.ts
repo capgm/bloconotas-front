@@ -7,6 +7,7 @@ import { NotaListComponent } from './componentes/nota/nota-list/nota-list.compon
 import { NotaCreateComponent} from './componentes/nota/nota-create/nota-create.component';
 import { NotaEditComponent } from './componentes/nota/nota-edit/nota-edit.component';
 import { NotaViewComponent } from './componentes/nota/nota-view/nota-view.component';
+import { HomeComponent } from './componentes/home/home.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'nota-create', component: NotaCreateComponent ,canActivate: [AuthGuard]},
   { path: 'nota-edit/:id', component: NotaEditComponent ,canActivate: [AuthGuard]},
   { path: 'nota-view/:id', component: NotaViewComponent ,canActivate: [AuthGuard]},
+  { path: 'home', component: HomeComponent,canActivate: [AuthGuard]},
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 

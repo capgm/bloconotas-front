@@ -38,6 +38,6 @@ export class NotaListComponent implements OnInit {
   }
 
   voltar(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
   }
 }

@@ -32,6 +32,7 @@ export class HeaderComponent {
     if (typeof localStorage !== 'undefined') {
       const nomeLocalStorage = localStorage.getItem('nome');
       this.nomeUsuario = nomeLocalStorage !== null ? nomeLocalStorage : '';
+      console.log(this.nomeUsuario)
     } else {
       this.nomeUsuario = '';
     }

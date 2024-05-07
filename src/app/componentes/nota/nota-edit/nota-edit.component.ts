@@ -30,6 +30,6 @@ export class NotaEditComponent implements OnInit {
   }
 
   voltar(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/nota-lista']);
   }
 }
