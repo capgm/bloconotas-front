@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NotaCreate } from '../nota-create';
-import { NotaService } from '../service/nota.service';
+import { NotaCreate } from '../../../nota-create';
+import { NotaService } from '../../../service/nota.service';
 
 @Component({
   selector: 'app-nota-create',

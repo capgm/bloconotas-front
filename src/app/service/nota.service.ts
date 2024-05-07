@@ -29,9 +29,11 @@ export class NotaService {
 
   // Buscar todas as anotações
   getAll(): Observable<any[]> {
-    const token = localStorage.getItem('token'); // Recupera o token do localStorage
+    const token = localStorage.getItem('token');
+    const username =  localStorage.getItem('username'); // Recupera o token do localStorage
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Cria o cabeçalho de autorização
-
+    this.notasUrl = `${this.notasUrl}/usuario/${username}`;
+    console.log(this.notasUrl)
     return this.http.get<any[]>(this.notasUrl, { headers });
     //return this.http.get<any[]>(this.apiUrl);
   }

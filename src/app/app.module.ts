@@ -6,18 +6,20 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './componentes/usuario/login/login.component';
+import { RegisterComponent } from './componentes/usuario/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './TokenInterceptor';
-import { NotaListComponent } from './nota-list/nota-list.component';
-import { NotaEditComponent } from './nota-edit/nota-edit.component';
-import { NotaCreateComponent } from './nota-create/nota-create.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { NotaListComponent } from './componentes/nota/nota-list/nota-list.component';
+import { NotaEditComponent } from './componentes/nota/nota-edit/nota-edit.component';
+import { NotaCreateComponent } from './componentes/nota/nota-create/nota-create.component';
+import { HeaderComponent } from './componentes/header/header.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 import { provideHttpClient } from '@angular/common/http';
-import { NotaViewComponent } from './nota-view/nota-view.component';
+import { NotaViewComponent } from './componentes/nota/nota-view/nota-view.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -29,9 +31,9 @@ import { NotaViewComponent } from './nota-view/nota-view.component';
     NotaCreateComponent,
     HeaderComponent,
     FooterComponent,
-    NotaViewComponent,
+    NotaViewComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, MatSnackBarModule],
   providers: [
     provideClientHydration(),
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

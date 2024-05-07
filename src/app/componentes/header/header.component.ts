@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+
+  nomeUsuario : string = '';
+
   constructor(private router: Router) {}
 
   isAuthenticated(): boolean {
@@ -22,5 +25,16 @@ export class HeaderComponent {
     localStorage.clear();
     // Redirecionar para a página inicial
     this.router.navigate(['/']); // ou para o caminho correto da página inicial
+  }
+
+  ngOnInit(): void {
+
+    if (typeof localStorage !== 'undefined') {
+      const nomeLocalStorage = localStorage.getItem('nome');
+      this.nomeUsuario = nomeLocalStorage !== null ? nomeLocalStorage : '';
+    } else {
+      this.nomeUsuario = '';
+    }
+
   }
 }

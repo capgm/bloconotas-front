@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NotaService } from '../service/nota.service';
-import { Nota } from '../nota';
+import { NotaService } from '../../../service/nota.service';
+import { Nota } from '../../../nota';
 import { Router } from '@angular/router';
 
 @Component({

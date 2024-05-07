@@ -1,7 +1,7 @@
 // note-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NotaService } from '../service/nota.service';
+import { NotaService } from '../../../service/nota.service';
 
 @Component({
   selector: 'app-nota-list',

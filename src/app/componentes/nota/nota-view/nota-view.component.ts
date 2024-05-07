@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Nota } from '../nota';
+import { Nota } from '../../../nota';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NotaService } from '../service/nota.service';
+import { NotaService } from '../../../service/nota.service';
 
 @Component({
   selector: 'app-nota-view',
@@ -31,6 +31,6 @@ export class NotaViewComponent implements OnInit {
 
 
   voltar(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/nota-list']);
   }
 }

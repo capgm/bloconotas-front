@@ -1,0 +1,12 @@
+<div class="header-container">
+  <h1 class="header-title">My Login App</h1>
+  <nav class="navbar">
+    <a class="navbar" *ngIf="isAuthenticated()" routerLink="/nota-lista" routerLinkActive="active">Lista de Anotações</a>
+    <a class="navbar" *ngIf="isAuthenticated()" routerLink="/nota-create" routerLinkActive="active">Incluir Anotação</a>
+    <a class="navbar-right" *ngIf="!isAuthenticated()" routerLink="/login" routerLinkActive="active">Entrar</a>
+    <a class="navbar-right" *ngIf="!isAuthenticated()" routerLink="/register" routerLinkActive="active">Cadastre-se</a>
+
+    <a class="navbar-right" *ngIf="isAuthenticated()" href="#" (click)="logout()"> Bem vindo {{nomeUsuario}} !</a>
+    <a class="navbar-right" *ngIf="isAuthenticated()" href="#" (click)="logout()">Sair</a>
+  </nav>
+</div>
