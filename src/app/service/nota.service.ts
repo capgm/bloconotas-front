@@ -36,6 +36,16 @@ export class NotaService {
     //return this.http.get<any[]>(this.apiUrl);
   }
 
+
+  // Buscar todas as anotações
+  getById(id:number): Observable<Nota> {
+    const token = localStorage.getItem('token'); // Recupera o token do localStorage
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Cria o cabeçalho de autorização
+
+    this.notasUrl = `${this.notasUrl}/${id}`;
+    return this.http.get<Nota>(this.notasUrl, { headers });
+  }
+
   // Método para obter todas as notas
   /*getAll(): Observable<Nota[]> {
     return this.http.get<Nota[]>(this.notasUrl)
@@ -53,7 +63,9 @@ export class NotaService {
   }
   // Método para atualizar uma nota
   update(nota: Nota): Observable<any> {
-    const url = `${this.notasUrl}/${nota.id}`; // Construindo a URL com o ID da nota
+
+    const url = `${this.notasUrl}/${nota.id}`;
+
     return this.http
       .put(url, nota, this.httpOptions)
       .pipe(catchError(this.handleError<any>('update')));

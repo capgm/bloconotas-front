@@ -1,22 +1,10 @@
-
 <app-header>Bloco de Notas</app-header>
 
-<div class="main-content">
-  <router-outlet>
-    <nav>
-      <a *ngIf="!isAuthenticated()" routerLink="/login" routerLinkActive="active">Login</a>
-      <BR>
-      <a *ngIf="isAuthenticated()" routerLink="/register" routerLinkActive="active">Register</a>
-      <BR>
-      <a *ngIf="isAuthenticated()" routerLink="/nota-lista" routerLinkActive="active">Lista de notas</a>
-      <BR>
-      <a *ngIf="isAuthenticated()" routerLink="/nota-edite" routerLinkActive="active">Alterar notas</a>
-      <BR>
-        <a *ngIf="isAuthenticated()" routerLink="/nota-create" routerLinkActive="active">Inclui notas</a>
-      <BR>
-      <a *ngIf="isAuthenticated()" href="#" (click)="logout()">Sair</a>
-    </nav>
-
-  </router-outlet>
+<div class="app-container">
+  <div class="main-content">
+    <router-outlet>
+    </router-outlet>
+  </div>
 </div>
+
 <app-footer></app-footer>

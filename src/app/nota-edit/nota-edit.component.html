@@ -1,6 +1,6 @@
 <h2 class="nota-edicao">Editar Nota</h2>
 
-<form *ngIf="nota" class="nota-edicao">
+<form *ngIf="nota" class="nota-edicao"  (ngSubmit)="save()" #notaForm="ngForm">
   <div>
     <label for="titulo">Título:</label>
     <input type="text" id="titulo" [(ngModel)]="nota.titulo" name="titulo">
@@ -9,5 +9,7 @@
     <label for="anotacao">Anotação:</label>
     <textarea id="anotacao" [(ngModel)]="nota.anotacao" name="anotacao"></textarea>
   </div>
-  <button type="submit">Salvar</button>
+  <input type="hidden" [(ngModel)]="nota.id" name="notaId">
+  <button  type="submit">Salvar</button>
+  <button (click)="voltar()">Voltar</button>
 </form>

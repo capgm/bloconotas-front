@@ -21,13 +21,23 @@ export class NotaListComponent implements OnInit {
     this.notaService.getAll().subscribe(notas => this.notas = notas);
   }
 
+  visualizar(id: number): void {
+    this.router.navigate(['/nota-view', id]);
+  }
+
   edit(id: number): void {
-    this.router.navigate(['/editar-nota', id]);
+    this.router.navigate(['/nota-edit', id]);
   }
 
   delete(id: number): void {
+
     this.notaService.delete(id).subscribe(() => {
+
       this.notas = this.notas.filter(nota => nota.id !== id);
     });
+  }
+
+  voltar(): void {
+    this.router.navigate(['/']);
   }
 }

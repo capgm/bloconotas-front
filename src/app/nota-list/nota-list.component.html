@@ -2,8 +2,10 @@
 
 <ul class="lista-notas">
   <li *ngFor="let nota of notas" class="nota-item">
-    {{ nota.titulo }} - {{ nota.anotacao }}
+    {{ nota.titulo }}
+    <button (click)="visualizar(nota.id)">Visualizar</button>
     <button (click)="edit(nota.id)">Editar</button>
     <button (click)="delete(nota.id)">Deletar</button>
   </li>
 </ul>
+<button (click)="voltar()">Voltar</button>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotaFormComponent } from './nota-form.component';
+import { NotaViewComponent } from './nota-view.component';
 
-describe('NotaFormComponent', () => {
-  let component: NotaFormComponent;
-  let fixture: ComponentFixture<NotaFormComponent>;
+describe('NotaViewComponent', () => {
+  let component: NotaViewComponent;
+  let fixture: ComponentFixture<NotaViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NotaFormComponent]
+      declarations: [NotaViewComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NotaFormComponent);
+    fixture = TestBed.createComponent(NotaViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

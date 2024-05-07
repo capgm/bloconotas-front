@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NotaService } from '../service/nota.service';
 import { Nota } from '../nota';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nota-edit',
@@ -11,7 +12,7 @@ import { Nota } from '../nota';
 export class NotaEditComponent implements OnInit {
   nota: Nota = { id: 0, titulo: '', anotacao: '' };
 
-  constructor(private route: ActivatedRoute, private notaService: NotaService) { }
+  constructor(private route: ActivatedRoute, private notaService: NotaService, private router: Router) { }
 
   ngOnInit(): void {
     this.getNote();
@@ -25,7 +26,10 @@ export class NotaEditComponent implements OnInit {
 
   save(): void {
     this.notaService.update(this.nota).subscribe(() => {
-      // Lógica para redirecionar de volta para a lista de notas após a edição
     });
+  }
+
+  voltar(): void {
+    this.router.navigate(['/']);
   }
 }
