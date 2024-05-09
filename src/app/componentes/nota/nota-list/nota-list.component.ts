@@ -18,7 +18,9 @@ export class NotaListComponent implements OnInit {
   }
 
   getNotes(): void {
-    this.notaService.getAll().subscribe(notas => this.notas = notas);
+    this.notaService.getAll().subscribe(notas => {
+      this.notas = notas
+    } );
   }
 
   visualizar(id: number): void {
@@ -38,6 +40,6 @@ export class NotaListComponent implements OnInit {
   }
 
   voltar(): void {
-    this.router.navigate(['/home']);
+    //this.router.navigate(['/home']);
   }
 }

@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 interface AuthResponse {
   token: string;
@@ -17,6 +21,8 @@ interface AuthResponse {
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   constructor(
     private http: HttpClient,
@@ -28,6 +34,7 @@ export class LoginComponent {
     const url = 'http://localhost:8080/api/v1/auth'; // URL da sua API de autenticação
     const body = { username: this.username, password: this.password };
 
+
     this.http.post<AuthResponse>(url, body).subscribe(
       (response) => {
         console.log('Login successful:', response);
@@ -38,8 +45,9 @@ export class LoginComponent {
         this.username = '';
         this.password = '';
 
-        this._snackBar.open('Usuário logado!', 'Fechar', {
-          duration: 2000, // duração em milissegundos (opcional)
+        this._snackBar.open('Usuário logado!', '', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
         });
 
         this.router.navigate(['/']);

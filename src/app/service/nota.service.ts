@@ -21,7 +21,7 @@ export class NotaService {
     const token = localStorage.getItem('token'); // Recupera o token do localStorage
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Cria o cabeçalho de autorização
 
-     return this.http.post(this.notasUrl, novaNota, this.httpOptions)
+     return this.http.post(this.notasUrl, novaNota, { headers })
       .pipe(
         catchError(this.handleError<any>('adicionarNota'))
       );
@@ -32,45 +32,36 @@ export class NotaService {
     const token = localStorage.getItem('token');
     const username =  localStorage.getItem('username'); // Recupera o token do localStorage
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Cria o cabeçalho de autorização
-    this.notasUrl = `${this.notasUrl}/usuario/${username}`;
-    console.log(this.notasUrl)
-    return this.http.get<any[]>(this.notasUrl, { headers });
-    //return this.http.get<any[]>(this.apiUrl);
+    let notasUrl = `${this.notasUrl}/usuario/${username}`;
+    return this.http.get<any[]>(notasUrl, { headers });
   }
-
 
   // Buscar todas as anotações
   getById(id:number): Observable<Nota> {
     const token = localStorage.getItem('token'); // Recupera o token do localStorage
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Cria o cabeçalho de autorização
 
-    this.notasUrl = `${this.notasUrl}/${id}`;
-    return this.http.get<Nota>(this.notasUrl, { headers });
+    let notasUrl = `${this.notasUrl}/${id}`;
+    return this.http.get<Nota>(notasUrl, { headers });
   }
-
-  // Método para obter todas as notas
-  /*getAll(): Observable<Nota[]> {
-    return this.http.get<Nota[]>(this.notasUrl)
-      .pipe(
-        catchError(this.handleError<Nota[]>('getAll', []))
-      );
-  }*/
 
   // Método para obter uma única nota pelo ID
   getOne(id: number): Observable<Nota> {
-    const url = `${this.notasUrl}/${id}`;
+    let notasUrl = `${this.notasUrl}/${id}`;
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Cria o cabeçalho de autorização
+
     return this.http
-      .get<Nota>(url)
-      .pipe(catchError(this.handleError<Nota>('getOne')));
+      .get<Nota>(notasUrl, { headers });
   }
   // Método para atualizar uma nota
   update(nota: Nota): Observable<any> {
 
-    const url = `${this.notasUrl}/${nota.id}`;
-
+    let notasUrl = `${this.notasUrl}/${nota.id}`;
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Cria o cabeçalho de autorização
     return this.http
-      .put(url, nota, this.httpOptions)
-      .pipe(catchError(this.handleError<any>('update')));
+      .put(notasUrl, nota, { headers })
   }
 
   /*this.notaService.update(this.nota.id, this.nota).subscribe(() => {
@@ -79,9 +70,9 @@ export class NotaService {
 
   // Método para deletar uma nota
   delete(id: number): Observable<Nota> {
-    const url = `${this.notasUrl}/${id}`;
+    let notasUrl = `${this.notasUrl}/${id}`;
     return this.http
-      .delete<Nota>(url, this.httpOptions)
+      .delete<Nota>(notasUrl, this.httpOptions)
       .pipe(catchError(this.handleError<Nota>('delete')));
   }
 

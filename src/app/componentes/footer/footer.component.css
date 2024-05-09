@@ -8,3 +8,8 @@
   padding: 20px;
   text-align: center;
 }
+
+.toolbar-primary {
+  background-color: #1976d2; /* Cor primária do Angular Material */
+  color: white; /* Cor do texto */
+}

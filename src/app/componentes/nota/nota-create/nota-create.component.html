@@ -1,12 +1,16 @@
-<form (ngSubmit)="adicionarNota()" class="nota-inclusao">
-  <div>
-    <label class="nota-inclusao" for="titulo">Título:</label>
-    <input class="nota-inclusao" type="text" id="titulo" name="titulo" [(ngModel)]="novaNota.titulo" required>
+<form (ngSubmit)="adicionarNota()" class="nota-inclusao" fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <mat-form-field style="width: 100%;" floatLabel="always">
+      <mat-label>Título:</mat-label>
+      <input matInput id="titulo" name="titulo" [(ngModel)]="novaNota.titulo" required>
+    </mat-form-field>
   </div>
-  <div>
-    <label class="nota-inclusao" for="anotacao">Anotação:</label>
-    <textarea class="nota-inclusao" id="anotacao" name="anotacao" [(ngModel)]="novaNota.anotacao" required></textarea>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <mat-form-field style="width: 100%;" floatLabel="always">
+      <mat-label>Anotação:</mat-label>
+      <textarea matInput id="anotacao" name="anotacao" [(ngModel)]="novaNota.anotacao" required> </textarea>
+    </mat-form-field>
   </div>
   <input type="hidden" id="campoHidden" name="campoHidden" [(ngModel)]="username">
-  <button class="nota-inclusao" type="submit">Adicionar Nota</button>
+  <button mat-raised-button color="primary" type="submit">Adicionar Nota</button>
 </form>

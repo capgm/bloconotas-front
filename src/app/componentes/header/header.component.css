@@ -1,36 +1,21 @@
-/* Estilos para o componente de header */
-.header-container {
-  background-color: #007bff;
-  color: #fff;
-  padding: 20px;
+.mat-toolbar-row {
+  justify-content: space-between;
 }
 
 .header-title {
-  font-size: 1.5rem;
-  margin: 0;
+  flex: 1;
   text-align: center;
 }
 
-.navbar {
-  margin-bottom: 20px;
+.spacer {
+  flex: 1;
 }
 
-.navbar a {
-  margin-right: 15px;
-  text-decoration: none;
-  color: rgb(179, 255, 0);
-  font-weight: bold;
+.flex-spacer {
+  flex: 20px;
 }
 
-.navbar-right a {
-  position: fixed;
-  margin-bottom: 20px;
-  text-decoration: none;
-  color: rgb(179, 255, 0);
-  font-weight: bold;
-  margin-right: 15px;
-}
-
-.navbar a:hover {
-  color: white;
+.right-section {
+  display: flex;
+  align-items: center;
 }

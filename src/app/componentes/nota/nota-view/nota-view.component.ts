@@ -29,8 +29,7 @@ export class NotaViewComponent implements OnInit {
     });
   }
 
-
   voltar(): void {
-    this.router.navigate(['/nota-list']);
+    this.router.navigate(['/nota-lista']);
   }
 }

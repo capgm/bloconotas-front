@@ -1,11 +1,17 @@
 <h2 class="lista-notas">Lista de Notas</h2>
 
-<ul class="lista-notas">
-  <li *ngFor="let nota of notas" class="nota-item">
-    {{ nota.titulo }}
-    <button (click)="visualizar(nota.id)">Visualizar</button>
-    <button (click)="edit(nota.id)">Editar</button>
-    <button (click)="delete(nota.id)">Deletar</button>
-  </li>
-</ul>
-<button (click)="voltar()">Voltar</button>
+<mat-list class="lista-notas" fxLayout="column" fxLayoutGap="10px">
+  <mat-list-item *ngFor="let nota of notas" class="nota-item" fxLayout="row" fxLayoutAlign="start center">
+    <span>{{ nota.titulo }}</span>
+    <button mat-icon-button (click)="visualizar(nota.id)">
+      <mat-icon>visibility</mat-icon>
+    </button>
+    <button mat-icon-button (click)="edit(nota.id)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="delete(nota.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+<button mat-raised-button color="primary" (click)="voltar()">Voltar</button>

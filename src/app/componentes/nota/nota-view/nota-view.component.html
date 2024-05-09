@@ -1,5 +1,13 @@
-<div class="nota-container">
-  <div class="nota-title">{{ nota.titulo }}</div>
-  <div class="nota-content">{{ nota.anotacao }}</div>
-</div>
-<button (click)="voltar()">Voltar</button>
+<h2 class="nota-edicao">Visualizar Nota</h2>
+<mat-card class="nota-container">
+  <mat-card-header>
+    <mat-card-title>{{ nota.titulo }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ nota.titulo }}</p>
+  </mat-card-content>
+  <mat-card-content>
+    <p>{{ nota.anotacao }}</p>
+  </mat-card-content>
+</mat-card>
+<button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
