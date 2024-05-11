@@ -7,7 +7,7 @@ import { NotaListComponent } from './componentes/nota/nota-list/nota-list.compon
 import { NotaCreateComponent} from './componentes/nota/nota-create/nota-create.component';
 import { NotaEditComponent } from './componentes/nota/nota-edit/nota-edit.component';
 import { NotaViewComponent } from './componentes/nota/nota-view/nota-view.component';
-import { HomeComponent } from './componentes/home/home.component';
+import { HomeComponent } from './componentes/componentes-page/home/home.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

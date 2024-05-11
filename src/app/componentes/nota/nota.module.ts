@@ -8,12 +8,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
 import { TokenInterceptor } from '../../TokenInterceptor';
 import { FormsModule } from '@angular/forms';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule} from '@angular/material/list';
-import { MatIconModule} from '@angular/material/icon';
+import { AngularMaterialModule } from '../../angular-material/angular-material.module';
 
 
 
@@ -32,14 +27,7 @@ import { MatIconModule} from '@angular/material/icon';
   imports: [
     CommonModule,
     FormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatFormField,
-    MatLabel,
-    MatListModule,
-    MatIconModule
+    AngularMaterialModule
   ],
   exports:[
     NotaViewComponent,

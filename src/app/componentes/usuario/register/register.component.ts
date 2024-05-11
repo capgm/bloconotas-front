@@ -5,13 +5,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-
-
-interface AuthResponse {
-  token: string;
-  username: string;
-  nome: string;
-}
+import { AuthResponse } from '../../../interfaces/AuthResponse';
 
 @Component({
   selector: 'app-register',

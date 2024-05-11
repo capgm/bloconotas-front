@@ -3,20 +3,20 @@
     <span class="header-title">Bloco de Notas</span>
     <span class="spacer"></span>
     <ng-container *ngIf="isAuthenticated(); else notAuthenticated">
-      <a mat-button routerLink="/nota-lista" routerLinkActive="active">Lista de Anotações</a>
-      <a mat-button routerLink="/nota-create" routerLinkActive="active">Incluir Anotação</a>
-      <span class="flex-spacer"></span> <!-- Espaço flexível para alinhar à direita -->
+      <a mat-button (click)="navegarParaNotaLista()">Lista de Anotações</a>
+      <a mat-button (click)="criarAnotacao()">Incluir Anotação</a>
+      <span class="flex-spacer"></span>
       <span class="right-section">
-        <mat-label [(ngModel)]="nomeUsuario">{{nomeUsuario}}</mat-label>
+        <mat-label [(ngModel)]="nomeUsuario">Olá, {{nomeUsuario}}</mat-label>
         <span class="flex-spacer"></span>
         <a mat-button (click)="logout()">Sair</a>
       </span>
     </ng-container>
     <ng-template #notAuthenticated>
       <span class="right-section">
-        <a mat-button routerLink="/login" routerLinkActive="active">Entrar</a>
+        <a mat-button (click)="loginUsuario()">Entrar</a>
         <span class="flex-spacer"></span>
-        <a mat-button routerLink="/register" routerLinkActive="active">Cadastre-se</a>
+        <a mat-button (click)="registrarUsuario()">Cadastre-se</a>
       </span>
     </ng-template>
   </mat-toolbar-row>

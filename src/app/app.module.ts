@@ -9,33 +9,25 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './TokenInterceptor';
-import { HeaderComponent } from './componentes/header/header.component';
-import { FooterComponent } from './componentes/footer/footer.component';
 import { provideHttpClient } from '@angular/common/http';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HomeComponent } from './componentes/home/home.component';
-import { NotaModule } from './componentes/nota/nota.module';
-import { UsuarioModule } from './componentes/usuario/usuario.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {MatToolbarModule, MatToolbarRow} from '@angular/material/toolbar'
-import {MatDividerModule} from '@angular/material/divider';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { ComponentesModule } from './componentes/componentes';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatSnackBarModule,
-    NotaModule,
-    UsuarioModule,
-    MatToolbarModule,
-    MatToolbarRow,
-    MatDividerModule
+    ComponentesModule,
   ],
   providers: [
     provideClientHydration(),
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500} },
     provideHttpClient(),
     provideAnimationsAsync(),
   ],

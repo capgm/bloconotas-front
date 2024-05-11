@@ -1,4 +1,9 @@
-/* Estilos para a tela de edição de notas */
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
 .nota-edicao {
   max-width: 800px;
   margin: 0 auto;

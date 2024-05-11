@@ -1,21 +1,23 @@
 <h2 class="nota-edicao">Editar Nota</h2>
 
 <form *ngIf="nota" class="nota-edicao" (ngSubmit)="save()" #notaForm="ngForm" fxLayout="column" fxLayoutGap="10px">
-  <div>
-    <mat-form-field>
-      <mat-label>Título:</mat-label>
-      <input matInput type="text" id="titulo" [(ngModel)]="nota.titulo" name="titulo">
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <mat-label>Anotação:</mat-label>
-      <textarea matInput id="anotacao" [(ngModel)]="nota.anotacao" name="anotacao"></textarea>
-    </mat-form-field>
-  </div>
-  <input type="hidden" [(ngModel)]="nota.id" name="notaId">
-  <div fxLayout="row" fxLayoutAlign="end">
-    <button mat-raised-button color="primary" type="submit">Salvar</button>
-    <button mat-raised-button (click)="voltar()">Voltar</button>
+  <div class="container">
+    <div>
+      <mat-form-field class="container">
+        <mat-label>Título:</mat-label>
+        <input matInput type="text" id="titulo" [(ngModel)]="nota.titulo" name="titulo">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="container">
+        <mat-label>Anotação:</mat-label>
+        <textarea matInput id="anotacao" [(ngModel)]="nota.anotacao" name="anotacao"></textarea>
+      </mat-form-field>
+    </div>
+    <input type="hidden" [(ngModel)]="nota.id" name="notaId">
+    <div fxLayout="row" fxLayoutAlign="end">
+      <button mat-raised-button color="primary" type="submit">Salvar</button>
+      <button mat-raised-button (click)="voltar()">Voltar</button>
+    </div>
   </div>
 </form>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NotaService } from '../../../service/nota.service';
-import { Nota } from '../../../nota';
+import { Nota } from '../../../interfaces/nota';
 import { Router } from '@angular/router';
 
 @Component({
@@ -29,9 +29,6 @@ export class NotaEditComponent implements OnInit {
     console.log(nota);
       this.nota = nota;
     console.log(this.nota)
-    //  this.nota.id = nota.id;
-    //  this.nota.titulo = nota.titulo;
-    //  this.nota.anotacao = nota.anotacao;
     });
   }
 

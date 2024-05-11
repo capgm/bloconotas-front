@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Nota } from '../../../nota';
+import { Nota } from '../../../interfaces/nota';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NotaService } from '../../../service/nota.service';
 

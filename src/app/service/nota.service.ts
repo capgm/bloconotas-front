@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Nota } from '../nota';
+import { Nota } from '../interfaces/nota';
 import { NotaCreate } from '../nota-create';
 
 @Injectable({
@@ -33,7 +33,7 @@ export class NotaService {
     const username =  localStorage.getItem('username'); // Recupera o token do localStorage
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Cria o cabeçalho de autorização
     let notasUrl = `${this.notasUrl}/usuario/${username}`;
-    return this.http.get<any[]>(notasUrl, { headers });
+    return this.http.get<any[]>(notasUrl, { headers })
   }
 
   // Buscar todas as anotações

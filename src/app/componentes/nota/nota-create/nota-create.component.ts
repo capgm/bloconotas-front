@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NotaCreate } from '../../../nota-create';
 import { NotaService } from '../../../service/nota.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './nota-create.component.html',
   styleUrls: ['./nota-create.component.css']
 })
-export class NotaCreateComponent {
+export class NotaCreateComponent implements OnInit  {
   novaNota: NotaCreate = { titulo: '', anotacao: '', username: '' };
   username: string = '';
 

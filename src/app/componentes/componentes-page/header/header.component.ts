@@ -26,6 +26,22 @@ export class HeaderComponent {
     }
   }
 
+  navegarParaNotaLista() {
+    this.router.navigate(['/nota-lista']);
+  }
+
+  criarAnotacao() {
+    this.router.navigate(['/nota-create']);
+  }
+
+  registrarUsuario() {
+    this.router.navigate(['/register']);
+  }
+
+  loginUsuario() {
+    this.router.navigate(['/login']);
+  }
+
   logout(): void {
     // Limpar LocalStorage
     localStorage.clear();
